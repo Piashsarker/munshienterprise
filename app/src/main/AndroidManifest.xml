@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dcastalia.android.job_portal"
+
+    >
+    <uses-sdk android:minSdkVersion="7" />
+
+    <!-- Required Permissions -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Controller.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity.Splash_activity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.JobOpening_activity"></activity>
+        <activity android:name=".Activity.Job_search_activity"></activity>
+        <activity android:name=".Activity.Job_details_activity"></activity>
+        <activity android:name=".Activity.Favourite_activity"></activity>
+        <activity android:name=".Activity.Help_activity"></activity>
+        <activity android:name=".Activity.Myjob_activity"></activity>
+        <activity android:name=".Activity.Setting_activity"></activity>
+
+        <provider
+
+            android:name=".ContentProvider.MyFileContentProvider"
+
+            android:authorities="com.dcastalia.android.job_portal"
+
+            android:enabled="true"
+
+            android:exported="true" />
+    </application>
+
+</manifest>
